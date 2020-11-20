@@ -1,0 +1,20 @@
+{
+  "Guest": {
+    "host": "127.0.0.1",
+    "user": "guest_1",
+    "password": "db",
+    "database": "park"
+  },
+  "Worker": {
+    "host": "127.0.0.1",
+    "user": "technopark",
+    "password": "db",
+    "database": "park"
+  },
+  "Manager": {
+    "host": "127.0.0.1",
+    "user": "technopark",
+    "password": "db",
+    "database": "park"
+  }
+}

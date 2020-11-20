@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for cat in catalog %}
+        <form class="text-center mx-auto mb-3" action="" method=POST>
+            <input type=hidden name=choice_name value={{ cat.name }}>
+            <input type=hidden name=choice_id value={{ cat.id_catalog }}>
+
+            {{ cat.name }}
+
+            <input type=text name=quantity>
+            <input type=submit value='Выбрать' name='choice'>
+        </form>
+    {% endfor %}
+
+    <form class="text-center mx-auto mb-3" action="" method=POST>
+        <input type=submit value='Оформить заказ' name='exit'>
+        <input type=submit value='Показать корзину' name='show_basket'>
+    </form>
+
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}
