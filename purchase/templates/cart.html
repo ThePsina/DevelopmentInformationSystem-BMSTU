@@ -2,21 +2,25 @@
 
 {% block content %}
     <table class="table mx-auto mb-3" style="width: 400px">
-        <tr>
-            <td align=center> name</td>
-            <td align=center> amount</td>
-            <td align=center></td>
-        </tr>
-        {% for bas in basket %}
+        <thead>
             <tr>
-                <td align=center>{{ bas.choice_name }}</td>
-                <td align=center>{{ bas.amount }}</td>
-                <form action="" method=POST>
-                    <input type=hidden name=choice_name_delete value={{ bas.choice_name }}>
-                    <td><input type=submit value='Удалить' name='delete'></td>
-                </form>
+                <td align=center>название</td>
+                <td align=center>количество</td>
+                <td align=center>дейсвтие</td>
             </tr>
-        {% endfor %}
+        </thead>
+        <tbody>
+            {% for basket_item in basket %}
+                <tr>
+                    <td align=center>{{ basket_item.choice_name }}</td>
+                    <td align=center>{{ basket_item.amount }}</td>
+                    <form action="" method=POST>
+                        <input type=hidden name=choice_name_delete value={{ basket_item.choice_name }}>
+                        <td><input type=submit value='Удалить' name='delete'></td>
+                    </form>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
     <a href="/purchase" class="btn btn-outline-success mb-3">Назад в каталог</a>
 {% endblock %}

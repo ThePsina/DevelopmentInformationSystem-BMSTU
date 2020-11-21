@@ -48,7 +48,7 @@ def menu():
     elif point in route_mapping:
         return redirect(route_mapping[point])
     else:
-        return redirect(route_mapping['3'])
+        return redirect(route_mapping['1'])
 
 
 app.run(debug=True)

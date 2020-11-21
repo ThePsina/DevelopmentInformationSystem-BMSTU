@@ -6,15 +6,11 @@ auth = Blueprint('auth', __name__, template_folder='templates')
 
 @auth.route('/', methods=['GET', 'POST'])
 def authorization():
-    print(request.cookies.get("session"))
     if 'send' in request.form and request.form['send'] == 'auth':
         result = []
 
         login = request.form.get('login')
         password = request.form.get('password')
-
-        print(login)
-        print(password)
 
         if login and password:
             with UseDatabase(current_app.config['dbconfig']['Manager']) as cursor:

@@ -1,5 +1,5 @@
 {
-  "1": ["Guest", "Worker", "Manager"],
-  "2": ["Worker"],
-  "3": ["Guest", "Worker", "Manager"]
+  "1": ["Worker", "Manager"],
+  "2": ["Manager"],
+  "3": ["Worker", "Manager"]
 }

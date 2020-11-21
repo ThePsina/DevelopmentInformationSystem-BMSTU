@@ -14,7 +14,6 @@ def purchase_func():
         return render_template('error.html', text=f"Не хватает прав для этого действия")
 
     init_cart()
-    print(type(session['cart']))
     with UseDatabase(current_app.config['dbconfig']['Manager']) as cursor:
         catalog = show_catalog(cursor)
 
@@ -84,8 +83,6 @@ def init_cart():
 
 
 def save_basket(cursor):
-    cursor.execute(f"truncate table basket")
-
     for i in range(len(session['cart'])):
         values = session['cart'][i].values()
         values = list(values)
