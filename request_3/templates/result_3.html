@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Покажите фамилии водителей, которые пока не совершили ни одного выхода на работу</h2>
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <tr>
+                <th scope="col">driver_name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for driver in drivers %}
+                <tr>
+                    <td>{{ driver['driver_name'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

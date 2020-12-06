@@ -15,11 +15,11 @@ def req_1():
         if year:
             with UseDatabase(current_app.config['dbconfig']["Manager"]) as cursor:
                 drivers = find_drivers(cursor, year, month, way)
-            return render_template('result.html', drivers=drivers)
+            return render_template('result_1.html', drivers=drivers)
         else:
-            return render_template('enter_data.html')
+            return render_template('enter_1.html')
     else:
-        return render_template('enter_data.html')
+        return render_template('enter_1.html')
 
 
 def find_drivers(cursor, year, month, way):

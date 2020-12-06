@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Покажите все сведения о водителе с самым большим стажем работы</h2>
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+
+                <th scope="col">driver_name</th>
+
+                <th scope="col">driver_surname</th>
+
+                <th scope="col">birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for driver in drivers %}
+                <tr>
+                    <td>{{ driver['id'] }}</td>
+
+                    <td>{{ driver['driver_name'] }}</td>
+
+                    <td>{{ driver['driver_surname'] }}</td>
+
+                    <td>{{ driver['birth'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

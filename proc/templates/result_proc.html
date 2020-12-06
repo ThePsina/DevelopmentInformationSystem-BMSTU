@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table mx-auto mb-3" style="width: 400px">
+        <thead>
+        <tr>
+            <th scope="col">report_way</th>
+
+            <th scope="col">report_year</th>
+
+            <th scope="col">report_month</th>
+
+            <th scope="col">tickets_num</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for driver in drivers %}
+            <tr>
+                <td>{{ driver['report_way'] }}</td>
+
+                <td>{{ driver['report_year'] }}</td>
+
+                <td>{{ driver['report_month'] }}</td>
+
+                <td>{{ driver['tickets_num'] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}

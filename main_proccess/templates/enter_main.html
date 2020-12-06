@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Schedule</h2>
+    <form method="post" class="text-center mx-auto mb-3" action="">
+        <div class="form-group">
+            {% for row in schedule_get %}
+                <input type=hidden id="id_s" name="id_s" value={{ row['id'] }}>
+                <table class="table mx-auto mb-3" style="width: 800px">
+                    <tbody>
+                    <td><input class="form-control" type="text" id="driver" name="driver"
+                               value={{ row['driver_surname'] }}></td>
+                    <td><input class="form-control" type="text" id="way" name="way" value={{ row['way_name'] }}></td>
+                    <td>
+                        <button type="submit" class="btn btn-outline-success" name="update" value="update">update
+                        </button>
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-outline-success" name="delete" value="delete">delete
+                        </button>
+                    </td>
+                    </tbody>
+                </table>
+            {% endfor %}
+        </div>
+    </form>
+
+    <h2>Add to Schedule</h2>
+    <form method="post" class="text-center mx-auto mb-3" action="">
+        <table class="table mx-auto mb-3" style="width: 800px">
+            <tbody>
+            <td><select class="form-control" id="driver" name="driver">
+                {% for driver in drivers %}
+                    <option value={{ driver['driver_surname'] }}> {{ driver['driver_surname'] }} </option>
+                {% endfor %}
+            </select></td>
+            <td><select class="form-control" id="way" name="way">
+                {% for way in ways %}
+                    <option value={{ way['way_name'] }}> {{ way['way_name'] }} </option>
+                {% endfor %}
+            </select></td>
+            <td>
+                <button type="submit" class="btn btn-outline-success" name="send" value="send">send</button>
+            </td>
+            </tbody>
+        </table>
+    </form>
+
+    <a href="/menu" class="btn btn-outline-success mb-3">Назад в меню</a>
+{% endblock %}
