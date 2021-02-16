@@ -5,8 +5,8 @@ from request_2.request_2 import request_2
 from request_3.request_3 import request_3
 from request_4.request_4 import request_4
 from request_5.request_5 import request_5
-from request_6.request_6 import request_6
-from proc.proc import proc
+fr
+
 from main_proccess.main_proccess import main_proc
 from auth.auth import auth
 from logout import delete_cookie
